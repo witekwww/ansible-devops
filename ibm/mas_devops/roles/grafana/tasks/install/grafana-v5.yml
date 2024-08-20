@@ -40,7 +40,7 @@
 # As per https://docs.openshift.com/container-platform/4.8/monitoring/enabling-monitoring-for-user-defined-projects.html#enabling-monitoring-for-user-defined-projects
 # use the external thanos url
 
-- name: Create prometheus-user-workload token
+- name: Create the prometheus-user-workload token
   shell: "oc create token prometheus-user-workload -n openshift-user-workload-monitoring"
   register: prometheus_token
   retries: 10
