@@ -41,12 +41,11 @@
 # use the external thanos url
 
 - name: Create prometheus-user-workload token
-  shell: "oc create token prometheus-user-workload"
+  shell: "oc create token prometheus-user-workload -n openshift-user-workload-monitoring"
   register: prometheus_token
   retries: 10
   delay: 30 # seconds
   until: prometheus_token.rc == 0
-  no_log: true
 
 - name: "install : Get Thanos Querier route in openshift-monitoring namespace"
   kubernetes.core.k8s_info:
