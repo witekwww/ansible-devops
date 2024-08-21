@@ -49,7 +49,7 @@
 
 - name: Get prometheus token
   set_fact:
-    promtetheus_token: "{{prometheus_token_resp.stdout_lines | first}}"
+    prometheus_token: "{{prometheus_token_resp.stdout_lines | first}}"
 
 - name: "install : Get Thanos Querier route in openshift-monitoring namespace"
   kubernetes.core.k8s_info:
